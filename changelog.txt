@@ -1,0 +1,97 @@
+*** WooCommerce Shipping Changelog ***
+
+= 1.2.1 - 2024-10-17 =
+* Fix   - Issue with excessive rendering of the shipping label success view.
+
+= 1.2.0 - 2024-10-16 =
+* Add   - Option to allow shipping address validation at checkout.
+* Fix   - A failed payment would hinder future purchases.
+* Tweak - Do not cache new shipping API endpoints.
+* Tweak - Improve asset file versioning.
+
+= 1.1.5 - 2024-10-02 =
+* Fix   - A single order being shipped within the same country and internationally could cause confusion with the customs form.
+* Fix   - Changing a shipment's origin or destination address was not being reflected correctly throughout the entire UI.
+* Fix   - Total shipment weight exceeding 1k caused the total weight field to be blank.
+* Fix   - Moving shipment items to another shipment can cause the app to crash under certain conditions.
+* Fix   - Shipping labels now hide the origin name when the origin address includes a company name.
+* Dev   - New `wcshipping_include_email_tracking_info` filter so 3rd party plugins can enable/disable tracking info in emails.
+
+= 1.1.4 - 2024-09-25 =
+* Add   - Automate address verification for shipping address on the purchase screen.
+* Add   - Improve the purchase status header during the purchase process
+* Tweak - Improve timestamp handling on plugin status page.
+* Fix   - Selectively migrate WooCommerce Shipping & Tax packages if WCShipping created its own new settings.
+* Fix   - Don't remove non-compact options prefixed with "wc_connect_" on uninstallation.
+* Fix   - Focusing in the custom package form doesn't deactivate the "Get rates button" button.
+* Fix   - Ensure custom items stay in sync with the shipment items.
+* Fix   - Surface payment errors to the user.
+* Fix   - Remember dismissal of migration banners
+* Fix   - Customs form's weight to represent the total weight instead of individual line item weight.
+
+= 1.1.3 - 2024-09-18 =
+* Add   - Remember last order complete checkbox state for next label purchase.
+* Add   - Automatically fetch rates on label purchase modal load when all conditions are met for fetching rates.
+* Add   - Load the settings data from DB.
+* Fix   - Ensure tracking numbers link to the correct carrier tracking url when using the Shipment Tracking extension.
+* Fix   - Customs form's value to represent the total value instead of individual line item value.
+* Fix   - Hide virtual products in the shipping label modal.
+* Tweak - Improve error handling when purchasing shipping labels.
+* Dev   - Ensure all API endpoints are loaded using the correct hook.
+
+= 1.1.2 - 2024-09-13 =
+* Add   - Functionality to delete saved packages and remove starred carrier packages.
+* Add   - Added a package weight field to the save template form.
+* Tweak - Store the name of the package that was used for a shipping label as part of the shipping label metadata.
+* Tweak - Support product customs data created by WooCommerce Shipping & Tax when purchasing new shipping labels.
+* Fix   - Improve responsive behaviour of the "Shipping Label" meta box on order edit pages.
+* Fix   - Nested items in the split shipment modal was missing dimension units.
+* Fix   - Hide WooCommerce Shipping & Tax migration banners if there are no previous history.
+* Fix   - Update the background order form when using the "Mark order as completed" option.
+* Fix   - Hide "Mark as complete" option on already completed orders.
+
+= 1.1.1 - 2024-09-06 =
+* Fix   - Get rates button doesn't get active after correcting customs information.
+* Fix   - Accessing products from old labels when migrating shipments causes the process to stall.
+* Fix   - Hide WooCommerce Shipping & Tax migration banners if there are no previous history.
+
+= 1.1.0 - 2024-09-03 =
+* Add   - Support for migrating WooCommerce Shipping & Tax labels and settings.
+* Add   - Tooltip to explain disabled delete button on default origin address.
+* Add   - Necessary endpoints to load the plugin dynamically in WooCommerce.
+* Add   - Allow the WooCommerce mobile app to access API.
+* Tweak - Move shipment tracking metabox to upper position.
+* Fix   - Browser always ask to exit the settings screen after settings has been saved.
+* Fix   - Force shipments with a purchased label to be locked.
+* Fix   - Loading plugin version in Loader class.
+
+= 1.0.5 - 2024-08-21 =
+* Add   - Show error in Onboarding Connection component.
+* Fix   - Conflict with Jetpack connection class.
+* Tweak - Change to sender checkbox text on the customs form.
+* Tweak - Added new "source" parameter to the /wpcom-connection endpoint.
+
+= 1.0.4 - 2024-08-13 =
+* Add   - New Connect component on the shipping settings page.
+* Add   - Upload sourcemaps to sentry.
+* Add   - Hook into WPCOM Connection dependency list to communicate we share logic with e.g. WooCommerce.
+* Tweak - Make composer package versions specific.
+* Tweak - Show confirmation banner after accepting Terms of Service.
+* Tweak - Hide connect banners if store currency is not supported by WooCommerce Shipping.
+* Tweak - Hide connect banners on the WooCommerce Shipping settings page.
+
+= 1.0.3 - 2024-08-02 =
+* Fix - Error accessing the continents API endpoint.
+
+= 1.0.2 - 2024-07-30 =
+* Tweak - WordPress 6.6 Compatibility.
+* Add   - Display the NUX banner on HPOS Order pages.
+
+= 1.0.1 - 2024-06-24 =
+* Tweak - Adhering to the plugin review standards.
+
+= 1.0.0 - 2024-04-18 =
+* Initial release.
+
+= 0.9.0 - 2024-03-20 =
+* Beta release.
